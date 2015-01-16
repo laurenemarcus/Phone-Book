@@ -48,4 +48,14 @@ describe(Phone) do
       expect(test_number.id()).to(eq(1))
     end
   end
+
+  describe(".find") do
+    it("returns a phone number by its ID number") do
+      test_number = Phone.new({ :type => "home", :number => "555-444-1234" })
+      test_number.save()
+      test_number2 = Phone.new({ :type => "cell", :number => "555-777-6789" })
+      test_number2.save()
+      expect(test_number.id()).to(eq(1))
+    end
+  end
 end
