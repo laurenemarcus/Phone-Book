@@ -10,7 +10,7 @@ describe(Contact) do
     end
   end
 
-  describe("#name")do
+  describe("#phone_number")do
     it("returns the phone number of the contact") do
       test_contact = Contact.new({ :name => "Melody", :phone_number => "555-444-1234" })
       expect(test_contact.phone_number()).to(eq("555-444-1234"))
