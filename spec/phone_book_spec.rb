@@ -30,4 +30,12 @@ describe(Contact) do
       expect(Contact.all()).to(eq([test_contact]))
     end
   end
+
+  describe(".clear") do
+    it("empties out all of the saved contacts") do
+      Contact.new({ :name => "Melody", :phone_number => "555-444-1234" })
+      Contact.clear()
+      expect(Contact.all()).to(eq([]))
+    end
+  end
 end
