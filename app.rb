@@ -26,7 +26,12 @@ post("/contact") do
   erb(:phone_number)
 end
 
+get("/contact/:id") do
+  @phone = Phone.find(params.fetch("id").to_i())
+  erb(:contact)
+end
+
 get("/phone_number/:id") do
-  @contact = Contact.find(params.fetch("id"))
+  @contact = Contact.find(params.fetch("id").to_i())
   erb(:phone_number)
 end

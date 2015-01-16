@@ -16,7 +16,7 @@
 
 <ul>
   <% @contact.numbers().each() do |number| %>
-    <li><%= number.type() %> : <%= number.number() %></li>
+    <li><a href="/contact/<%= number.id() %>"><%= number.type() %> <%= number.number() %></a></li>
   <% end %>
 </ul>
 
