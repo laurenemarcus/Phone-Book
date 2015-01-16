@@ -16,4 +16,26 @@ describe(Phone) do
       expect(test_number.number()).to(eq("555-444-1234"))
     end
   end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Phone.all()).to(eq([]))
+    end
+  end
+
+  describe("#save") do
+    it("adds a phone number to the array of saved phone numbers") do
+      test_number = Phone.new({ :type => "home", :number => "555-444-1234" })
+      test_number.save()
+      expect(Phone.all()).to(eq([test_number]))
+    end
+  end
+
+  describe(".clear") do
+    it("clears out the array of save phone numbers") do
+      Phone.new({ :type => "home", :number => "555-444-1234" })
+      Phone.clear()
+      expect(Phone.all()).to(eq([]))
+    end
+  end
 end
