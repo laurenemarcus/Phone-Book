@@ -41,4 +41,11 @@ describe(Contact) do
       expect(Contact.all()).to(eq([]))
     end
   end
+
+  describe("#id") do
+    it("returns the unique ID number for the contact") do
+      test_contact = Contact.new({ :name => "Melody", :phone_number => "555-444-1234" })
+      expect(test_contact.id()).to(eq(1))
+    end
+  end
 end
