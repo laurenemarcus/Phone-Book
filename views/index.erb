@@ -1,6 +1,8 @@
 <h1>Phone Book</h1>
 
-<form action='/contact' method='post'>
+<h3>Add a contact here:</h3>
+
+<form action='/phone_number' method='post'>
   <div class="form-group">
     <label for="name">Name</label>
     <input id="name" name="name" class="form-control" type="text">
@@ -13,6 +15,6 @@
 <h3>Contacts: </h3>
 <ul>
   <% @contacts.each() do |contact| %>
-    <li><a href="/contact/<%= contact.id() %>"><%= contact.name() %></a></li>
+    <li><a href="/phone_number/<%= contact.id() %>"><%= contact.name() %></a></li>
   <% end %>
 </ul>
