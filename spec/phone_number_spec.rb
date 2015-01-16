@@ -2,6 +2,9 @@ require("rspec")
 require("phone_number")
 
 describe(Phone) do
+  before() do
+    Phone.clear()
+  end
 
   describe("#type") do
     it("returns the type") do
@@ -36,6 +39,13 @@ describe(Phone) do
       Phone.new({ :type => "home", :number => "555-444-1234" })
       Phone.clear()
       expect(Phone.all()).to(eq([]))
+    end
+  end
+
+  describe("#id") do
+    it("returns the id of the phone number") do
+      test_number = Phone.new({ :type => "home", :number => "555-444-1234" })
+      expect(test_number.id()).to(eq(1))
     end
   end
 end
