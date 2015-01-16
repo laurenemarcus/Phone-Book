@@ -1,16 +1,20 @@
 class Contact
   @@contacts = []
 
-  attr_reader(:name, :phone_number)
+  attr_reader(:name)
 
-  define_method(:initialize) do |attributes|
-    @name = attributes.fetch(:name)
-    @phone_number = attributes.fetch(:phone_number)
+  define_method(:initialize) do |name|
+    @name = name
+    @numbers = []
     @id = @@contacts.length().+(1)
   end
 
   define_method(:id) do
     @id
+  end
+
+  define_method(:numbers) do
+    @numbers
   end
 
   define_singleton_method(:all) do
