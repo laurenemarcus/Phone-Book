@@ -55,7 +55,7 @@ describe(Phone) do
       test_number.save()
       test_number2 = Phone.new({ :type => "cell", :number => "555-777-6789" })
       test_number2.save()
-      expect(test_number.id()).to(eq(1))
+      expect(Phone.find(test_number.id())).to(eq(test_number))
     end
   end
 end
