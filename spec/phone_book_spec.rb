@@ -16,4 +16,10 @@ describe(Contact) do
       expect(test_contact.phone_number()).to(eq("555-444-1234"))
     end
   end
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Contact.all()).to(eq([]))
+    end
+  end
 end
