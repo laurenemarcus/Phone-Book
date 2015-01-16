@@ -2,6 +2,9 @@ require("rspec")
 require("phone_book")
 
 describe(Contact) do
+  before() do
+    Contact.clear()
+  end
 
   describe("#name")do
     it("returns the name of the contact") do
@@ -10,7 +13,7 @@ describe(Contact) do
     end
   end
 
-  describe("#phone_number")do
+  describe("#phone_number") do
     it("returns the phone number of the contact") do
       test_contact = Contact.new({ :name => "Melody", :phone_number => "555-444-1234" })
       expect(test_contact.phone_number()).to(eq("555-444-1234"))
